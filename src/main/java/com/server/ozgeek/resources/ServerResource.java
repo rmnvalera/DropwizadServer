@@ -27,7 +27,7 @@ public class ServerResource {
     @GET
     @Timed
     public Saying sayHello(@QueryParam("name") Optional<String> name) {
-        final String value = String.format(template, name.orElse(defaultName));
+        final String value = String.format(name.orElse(defaultName));
         return new Saying(counter.incrementAndGet(), value);
     }
 }
