@@ -1,5 +1,8 @@
 template: "template"
 
+userToken: "123456789"
+serverToken: "123456"
+
 
 server:
   applicationConnectors:
