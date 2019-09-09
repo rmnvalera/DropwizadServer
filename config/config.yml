@@ -1,18 +1,18 @@
-template: "template"
-
-userToken: "123456789"
-serverToken: "123456"
-
+template: "ArmServer"
 
 server:
   applicationConnectors:
     - type: http
       port: 8080
-    - type: https
-      port: 443
-      keyStorePath: keystore/example.keystore
-      keyStorePassword: example
-      supportedProtocols: [TLSv1, TLSv1.1, TLSv1.2]
   adminConnectors:
     - type: http
       port: 8081
+
+logging:
+  level: INFO
+  appenders:
+    - type: console
+#    - type: file
+#      currentLogFilename: /tmp/textsecureshserver.log
+#      archivedLogFilenamePattern: /temp/textsecureserver-%d.log.gz
+#      archivedFileCount: 5
