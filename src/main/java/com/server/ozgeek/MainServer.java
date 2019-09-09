@@ -28,6 +28,9 @@ public class MainServer extends Application<ServerConfiguration> {
     @Override
     public void run(ServerConfiguration configuration,
                     Environment environment) {
+//        ErrorPageErrorHandler errorPageError = new ErrorPageErrorHandler();
+//        errorPageError.addErrorPage(404, "/error/404");
+//        environment.getApplicationContext().setErrorHandler(errorPageError);
 
         final TemplateHealthCheck healthCheck = new TemplateHealthCheck(configuration.getTemplate());
         environment.healthChecks().register("template", healthCheck);
@@ -54,6 +57,7 @@ public class MainServer extends Application<ServerConfiguration> {
 
 
         environment.jersey().register(resource);
+//        environment.jersey().register(new ErrorResource());
     }
 
 }
